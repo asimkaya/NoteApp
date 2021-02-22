@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    header {
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to right, #3399ff 0%, #ff99cc 100%);
+        overflow: hidden;
+        text-align: center;
+        h1 {
+            color: crimson;
+        }
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
