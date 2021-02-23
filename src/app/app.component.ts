@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -10,24 +11,33 @@ export class AppComponent implements OnInit {
   randomnumber: number;
   noteArray = [];
   randomNumberArray = [];
-  i: number = 0;
-  key: any;
 
   ngOnInit() {
     this.ListNote();
   }
 
+  constructor(private api: ApiService) { }
+
   GenerateNote() {
     this.note = prompt();
-    this.noteArray.push(this.note);
-
+    this.api.createNote(this.note).subscribe(data => {
+      this.ListNote();
+    });
 
   }
 
   ListNote() {
-    for (let index = 0; index < this.randomNumberArray.length; index++) {
-      const element = this.randomNumberArray[index];
-      this.noteArray.push(localStorage.getItem(element))
-    }
+    this.api.getNotes().subscribe((data: any) => {
+      this.noteArray = data;
+    })
+  }
+
+  DeleteNote(e: any) {
+    confirm('Silmek istediğinize emin misiniz ?') == true ?
+      this.api.deleteNote(e).subscribe(data => {
+        this.ListNote();
+      })
+      : console.log(false)
+
   }
 }

@@ -8,7 +8,7 @@
     </div>
     <div class="note-area">
       <div class="note" *ngFor="let data of noteArray">
-        <div class="delete-icon">
+        <div class="delete-icon" (click)="DeleteNote(data.id)">
           <svg height="512pt" viewBox="0 0 512 512" width="25px" height="25px" xmlns="http://www.w3.org/2000/svg">
             <path
               d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0"
@@ -18,7 +18,7 @@
               fill="#fafafa" />
           </svg>
         </div>
-        <p>{{data}}</p>
+        <p>{{data.note}}</p>
       </div>
     </div>
   </main>
