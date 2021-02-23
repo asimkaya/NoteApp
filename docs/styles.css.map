@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.scss"],"names":[],"mappings":"AAAA;AACA;;EAEI;EACA;AACJ,C","file":"styles.css","sourcesContent":["/* You can add global styles to this file, and also import other style files */\nhtml,\nbody {\n    font-family: \"Archivo Black\";\n    background-color: aquamarine;\n}\n"],"sourceRoot":"webpack:///"}
