@@ -10,19 +10,19 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getNotes(): Observable<any> {
-    return this.http.get('http://localhost:3000/' + 'notes', {
+    return this.http.get('https://json-server-wamoj59665220032.codeanyapp.com/' + 'notes', {
       observe: 'body'
     })
   }
 
   createNote(note: string): Observable<any> {
-    return this.http.post('http://localhost:3000/' + 'notes', {
+    return this.http.post('https://json-server-wamoj59665220032.codeanyapp.com/' + 'notes', {
       note
     }, { observe: 'body' })
   }
 
   deleteNote(id: number): Observable<any> {
-    return this.http.delete('http://localhost:3000/notes/' + id, {
+    return this.http.delete('https://json-server-wamoj59665220032.codeanyapp.com/notes/' + id, {
       observe: 'body'
     })
   }
