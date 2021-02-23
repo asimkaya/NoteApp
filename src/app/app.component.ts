@@ -9,15 +9,25 @@ export class AppComponent implements OnInit {
   note: string;
   randomnumber: number;
   noteArray = [];
+  randomNumberArray = [];
+  i: number = 0;
+  key: any;
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.ListNote();
+  }
 
   GenerateNote() {
     this.note = prompt();
-    this.randomnumber = Math.random() * 9;
-    localStorage.setItem(String(this.randomnumber), this.note)
-    this.noteArray.push(String(this.randomnumber));
+    this.noteArray.push(this.note);
+
+
   }
 
-  ListNote() { }
+  ListNote() {
+    for (let index = 0; index < this.randomNumberArray.length; index++) {
+      const element = this.randomNumberArray[index];
+      this.noteArray.push(localStorage.getItem(element))
+    }
+  }
 }
