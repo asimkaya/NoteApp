@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   randomnumber: number;
   noteArray = [];
   randomNumberArray = [];
+  userId: number;
 
   ngOnInit() {
     this.ListNote();
